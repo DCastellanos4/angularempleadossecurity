@@ -1,1 +1,79 @@
-<h1>Home</h1>
+<div class="container py-5 animate-fade-in">
+  <!-- Hero Section -->
+  <div class="hero-card p-4 p-md-5 mb-5 rounded-4 text-white">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="badge bg-white text-primary px-3 py-2 rounded-pill fw-semibold mb-3">
+          <i class="bi bi-shield-lock-fill me-1"></i> Sistema Seguro de Gestión
+        </span>
+        <h1 class="display-5 fw-bold mb-3 tracking-tight">
+          Bienvenido al Portal de Empleados
+        </h1>
+        <p class="lead mb-4 text-white-50">
+          Administra la plantilla, consulta información detallada, supervisa subordinados y accede a tu perfil con autenticación segura basada en tokens.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a [routerLink]="['/empleados']" class="btn btn-light btn-lg px-4 py-2 fw-semibold text-primary rounded-3 shadow-sm">
+            <i class="bi bi-people-fill me-2"></i> Ver Plantilla
+          </a>
+          <a [routerLink]="['/perfil']" class="btn btn-outline-light btn-lg px-4 py-2 fw-semibold rounded-3">
+            <i class="bi bi-person-badge me-2"></i> Mi Perfil
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-flex justify-content-center">
+        <div class="hero-illustration">
+          <i class="bi bi-buildings"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Access Grid -->
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card feature-card h-100 p-4 border-0">
+        <div class="feature-icon-wrapper bg-primary-subtle text-primary mb-3">
+          <i class="bi bi-person-lines-fill"></i>
+        </div>
+        <h3 class="h5 fw-bold mb-2">Directorio de Empleados</h3>
+        <p class="text-muted small mb-4">
+          Consulta la nómina completa de la empresa, oficios asignados, salarios y relaciones de mando.
+        </p>
+        <a [routerLink]="['/empleados']" class="feature-link mt-auto">
+          Acceder al listado <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card feature-card h-100 p-4 border-0">
+        <div class="feature-icon-wrapper bg-info-subtle text-info mb-3">
+          <i class="bi bi-diagram-3-fill"></i>
+        </div>
+        <h3 class="h5 fw-bold mb-2">Equipo de Subordinados</h3>
+        <p class="text-muted small mb-4">
+          Visualiza los empleados a cargo de tu dirección y gestiona sus datos en tiempo real.
+        </p>
+        <a [routerLink]="['/subordinados']" class="feature-link mt-auto">
+          Ver subordinados <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card feature-card h-100 p-4 border-0">
+        <div class="feature-icon-wrapper bg-success-subtle text-success mb-3">
+          <i class="bi bi-person-check-fill"></i>
+        </div>
+        <h3 class="h5 fw-bold mb-2">Perfil Personal</h3>
+        <p class="text-muted small mb-4">
+          Revisa tu información profesional, cargo activo, salario y credenciales de usuario.
+        </p>
+        <a [routerLink]="['/perfil']" class="feature-link mt-auto">
+          Consultar perfil <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

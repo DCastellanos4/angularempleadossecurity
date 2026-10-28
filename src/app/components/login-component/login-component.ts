@@ -20,6 +20,7 @@ export class LoginComponent {
     console.log(u);
     let response = await this._es.login(u);
     if (response != null) {
+      sessionStorage.setItem('ID', this.password.nativeElement.value)
       sessionStorage.setItem('token', response.response)
       this._rt.navigate(['/empleados'])
     }

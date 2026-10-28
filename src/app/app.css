@@ -1,0 +1,16 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 2.5rem;
+}
+
+.app-footer {
+  border-top: 1px solid var(--card-border, #e2e8f0);
+  background-color: #ffffff;
+  margin-top: auto;
+}

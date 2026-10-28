@@ -27,4 +27,9 @@ export class ServiceEmpleados {
         let header = new HttpHeaders().set("Content-type", "application/json").set("Authorization", "bearer " + t);
         return firstValueFrom(this._http.get<Empleado[]>(this.url + request, { headers: header }))
     }
+    async getProfile(id: number, t: string): Promise<Empleado> {
+        let request = "api/empleados/" + id;
+        let header = new HttpHeaders().set("Content-type", "application/json").set("Authorization", "bearer " + t);
+        return firstValueFrom(this._http.get<Empleado>(this.url + request, { headers: header }))
+    }
 }

@@ -1,9 +1,86 @@
-<h1>Login</h1>
-<form login="ngForm">
-  <label>Usuario</label>
-  <input type="text" #userName name="userName" />
-  <label>Contraseña</label>
-  <input type="text" #password name="password" />
-  <button (click)="login()">Entrar</button>
-  <button (click)="logOut()">Cerrar sesion</button>
-</form>
+<div class="login-wrapper py-5 animate-fade-in">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+        <div class="card login-card border-0 shadow-lg p-4 p-md-5">
+          <!-- Header -->
+          <div class="text-center mb-4">
+            <div class="login-icon-box mx-auto mb-3">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <h2 class="h4 fw-bold text-dark mb-1">Iniciar Sesión</h2>
+            <p class="text-muted small">Ingresa tus credenciales para acceder al sistema</p>
+          </div>
+
+          <!-- Form -->
+          <form login="ngForm" (ngSubmit)="$event.preventDefault()">
+            <!-- Usuario -->
+            <div class="mb-3">
+              <label class="form-label small fw-semibold text-secondary">
+                <i class="bi bi-person me-1"></i> Usuario
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-person-badge"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control bg-light border-start-0 ps-0"
+                  placeholder="Introduce tu usuario"
+                  #userName
+                  name="userName"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-4">
+              <label class="form-label small fw-semibold text-secondary">
+                <i class="bi bi-key me-1"></i> Contraseña / ID
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  class="form-control bg-light border-start-0 ps-0"
+                  placeholder="Introduce tu contraseña"
+                  #password
+                  name="password"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="d-grid gap-2">
+              <button
+                type="button"
+                class="btn btn-primary-custom w-100 py-2"
+                (click)="login()"
+              >
+                <i class="bi bi-box-arrow-in-right"></i> Entrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-custom w-100 py-2"
+                (click)="logOut()"
+              >
+                <i class="bi bi-power"></i> Cerrar sesión
+              </button>
+            </div>
+          </form>
+
+          <!-- Security note -->
+          <div class="mt-4 pt-3 text-center border-top border-light-subtle">
+            <span class="text-muted small">
+              <i class="bi bi-lock-fill text-success me-1"></i> Conexión cifrada y segura
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

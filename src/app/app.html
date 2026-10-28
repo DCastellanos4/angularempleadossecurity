@@ -1,2 +1,14 @@
-<app-menu-component></app-menu-component>
-<router-outlet></router-outlet>
+<div class="app-layout">
+  <app-menu-component></app-menu-component>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="app-footer">
+    <div class="container text-center py-4">
+      <p class="mb-0 text-muted small">
+        <i class="bi bi-shield-check text-primary me-1"></i>
+        Portal de Gestión de Empleados &copy; 2026. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+</div>

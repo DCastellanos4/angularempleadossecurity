@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login-component/login-component';
 import { ServiceEmpleados } from './services/empleados.service';
 import { EmpleadosComponent } from './components/empleados-component/empleados-component';
 import { SubordinadosComponent } from './components/subordinados-component/subordinados-component';
+import { PerfilComponent } from './components/perfil-component/perfil-component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SubordinadosComponent } from './components/subordinados-component/subor
     LoginComponent,
     EmpleadosComponent,
     SubordinadosComponent,
+    PerfilComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServiceEmpleados],

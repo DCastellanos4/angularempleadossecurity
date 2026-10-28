@@ -1,0 +1,78 @@
+<div class="container py-5 animate-fade-in">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+      @if (empleado) {
+        <div class="card profile-card border-0 shadow-lg overflow-hidden">
+          <!-- Card Header / Cover -->
+          <div class="profile-header text-center">
+            <div class="profile-avatar-wrapper">
+              <div class="profile-avatar">
+                {{ empleado.apellido ? empleado.apellido[0] : 'U' }}
+              </div>
+            </div>
+            <h3 class="fw-bold text-white mb-1">{{ empleado.apellido }}</h3>
+            <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-semibold">
+              <i class="bi bi-briefcase-fill me-1"></i> {{ empleado.oficio }}
+            </span>
+          </div>
+
+          <!-- Card Body / Details -->
+          <div class="card-body p-4 p-md-5">
+            <h5 class="fw-bold text-dark mb-3 border-bottom pb-2">
+              <i class="bi bi-person-lines-fill text-primary me-2"></i> Información Profesional
+            </h5>
+
+            <div class="row g-3 my-2">
+              <div class="col-6">
+                <div class="info-stat-card">
+                  <span class="stat-label">ID de Empleado</span>
+                  <span class="stat-value text-primary">#{{ empleado.idEmpleado }}</span>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="info-stat-card">
+                  <span class="stat-label">Salario Actual</span>
+                  <span class="stat-value text-success">{{ empleado.salario }} €</span>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="info-stat-card">
+                  <span class="stat-label">Oficio / Puesto</span>
+                  <span class="stat-value">{{ empleado.oficio }}</span>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="info-stat-card">
+                  <span class="stat-label">Director Asignado</span>
+                  <span class="stat-value text-secondary">
+                    <i class="bi bi-person-gear me-1"></i>
+                    {{ empleado.director ? '#' + empleado.director : 'Ninguno' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-4 pt-2">
+              <a [routerLink]="['/empleados']" class="btn btn-outline-custom flex-grow-1">
+                <i class="bi bi-people"></i> Plantilla
+              </a>
+              <a [routerLink]="['/subordinados']" class="btn btn-primary-custom flex-grow-1">
+                <i class="bi bi-diagram-3"></i> Mis Subordinados
+              </a>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <div class="text-center py-5">
+          <div class="spinner-border text-primary mb-3" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+          <p class="text-muted fw-medium mb-0">Cargando perfil de usuario...</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>
