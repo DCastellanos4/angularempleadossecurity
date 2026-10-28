@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<form login="ngForm">
+  <label>Usuario</label>
+  <input type="text" #userName name="userName" />
+  <label>Contraseña</label>
+  <input type="text" #password name="password" />
+  <button (click)="login()">Entrar</button>
+  <button (click)="logOut()">Cerrar sesion</button>
+</form>
