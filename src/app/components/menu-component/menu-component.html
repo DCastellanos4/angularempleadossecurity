@@ -6,7 +6,6 @@
       </span>
       <span class="brand-text">Staff<span class="brand-accent">Portal</span></span>
     </a>
-
     <button
       class="navbar-toggler custom-toggler"
       type="button"
@@ -22,12 +21,21 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
         <li class="nav-item">
-          <a class="nav-link custom-nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a
+            class="nav-link custom-nav-link"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
             <i class="bi bi-house-door me-1"></i> Inicio
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link custom-nav-link" [routerLink]="['/empleados']" routerLinkActive="active">
+          <a
+            class="nav-link custom-nav-link"
+            [routerLink]="['/empleados']"
+            routerLinkActive="active"
+          >
             <i class="bi bi-briefcase me-1"></i> Empleados
           </a>
         </li>
@@ -36,10 +44,18 @@
             <i class="bi bi-person-circle me-1"></i> Perfil
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" [routerLink]="['/signal']" routerLinkActive="active">
+            Signal
+          </a>
+        </li>
         <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
           <a class="btn-login-nav" [routerLink]="['/login']" routerLinkActive="active">
             <i class="bi bi-box-arrow-in-right me-1"></i> Acceso
           </a>
+        </li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <h1>{{ contador() }}</h1>
         </li>
       </ul>
     </div>
