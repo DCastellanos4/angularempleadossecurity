@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ServiceEmpleados } from '../../services/empleados.service';
 import { Empleado } from '../../models/empleado';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
   public empleado!: Empleado
-  constructor(private _es: ServiceEmpleados, private _rt: Router) {
+  constructor(private _es: ServiceEmpleados, private _rt: Router, private _cdr: ChangeDetectorRef) {
 
   }
   async ngOnInit(): Promise<any> {
@@ -20,8 +20,7 @@ export class PerfilComponent implements OnInit {
       console.log(id);
       this.empleado = await this._es.getProfile(id, sessionStorage['token'])
       console.log(this.empleado);
-    } else {
-      this._rt.navigate(['/login'])
+      this._cdr.detectChanges()
     }
   }
 

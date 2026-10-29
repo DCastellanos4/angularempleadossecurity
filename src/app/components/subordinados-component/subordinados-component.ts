@@ -19,9 +19,6 @@ export class SubordinadosComponent implements OnInit {
     if (t) {
       this.subordinados = await this._es.getSubordinados(t)
       this._cdr.detectChanges();
-
-    } else {
-      this._router.navigate(['login'])
     }
   }
 }

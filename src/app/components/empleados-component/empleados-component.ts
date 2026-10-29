@@ -20,8 +20,6 @@ export class EmpleadosComponent implements OnInit {
       this.empleados = await this._es.getEmpleados(t)
       this._cdr.detectChanges()
       console.log(this.empleados);
-    } else {
-      this._router.navigate(['/login'])
     }
   }
 }

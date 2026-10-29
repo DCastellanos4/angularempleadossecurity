@@ -11,6 +11,7 @@ import { ServiceEmpleados } from './services/empleados.service';
 import { EmpleadosComponent } from './components/empleados-component/empleados-component';
 import { SubordinadosComponent } from './components/subordinados-component/subordinados-component';
 import { PerfilComponent } from './components/perfil-component/perfil-component';
+import { AuthGuard } from './guards/auth-guard';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { PerfilComponent } from './components/perfil-component/perfil-component'
     PerfilComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServiceEmpleados],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServiceEmpleados, AuthGuard],
   bootstrap: [App],
 })
-export class AppModule {}
+export class AppModule { }
