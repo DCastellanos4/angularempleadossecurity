@@ -54,9 +54,28 @@
             <i class="bi bi-box-arrow-in-right me-1"></i> Acceso
           </a>
         </li>
-        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-          <h1>{{ contador() }}</h1>
+        <li>
+          <span class="counter-badge">
+            <i class="bi bi-plus-slash-minus me-1"></i>
+            {{ contador() }}
+          </span>
         </li>
+        <li>
+          <button type="button" class="btn btn-outline-custom w-100 py-2" (click)="logOut()">
+            <i class="bi bi-power"></i> Cerrar sesión
+          </button>
+        </li>
+        @if (usuario(); as usuarioActual) {
+          <li class="nav-item">
+            <span class="user-badge">
+              <i class="bi bi-person-circle"></i>
+              <span>
+                <small>Usuario</small>
+                <strong>{{ usuarioActual.apellido }}</strong>
+              </span>
+            </span>
+          </li>
+        }
       </ul>
     </div>
   </div>
